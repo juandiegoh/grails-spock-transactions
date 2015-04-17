@@ -4,7 +4,7 @@ import grails.test.spock.IntegrationSpec
 import grails.transaction.Transactional
 import spock.lang.Unroll
 
-class BillTransitionServiceIntegrationSpec extends IntegrationSpec {
+class BillTransitionServiceSpockIntegrationSpec extends IntegrationSpec {
 
     static transactional = false
 
