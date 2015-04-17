@@ -1,10 +1,8 @@
 package com.juandiegoh.gst
 
 import grails.transaction.Transactional
-import org.junit.After;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.junit.After
+import org.junit.Test
 
 public class BillTransitionServiceJUnitIntegrationTest {
 
@@ -18,10 +16,10 @@ public class BillTransitionServiceJUnitIntegrationTest {
         createAndSaveOpenBill()
         Number rowsUpdated = transitionBillsWithSessionClearance(true)
 
-        assertTrue rowsUpdated == 1
+        assert 1, rowsUpdated
 
         def bills = Bill.findAll()
-        assertTrue bills.status.every { it == 'CLOSED' }
+        assert bills.status.every { it == 'CLOSED' }
     }
 
     @Test
@@ -29,10 +27,10 @@ public class BillTransitionServiceJUnitIntegrationTest {
         createAndSaveOpenBill()
         Number rowsUpdated = transitionBillsWithSessionClearance(false)
 
-        assertTrue rowsUpdated == 1
+        assert 1, rowsUpdated
 
         def bills = Bill.findAll()
-        assertTrue bills.status.every { it == 'CLOSED' }
+        assert bills.status.every { it == 'CLOSED' }
     }
 
     private Number transitionBillsWithSessionClearance(Boolean sessionClearance) {

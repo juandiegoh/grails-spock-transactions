@@ -19,20 +19,20 @@ class BillTransitionServiceGroovyTestCaseIntegrationTest extends GroovyTestCase 
         createAndSaveOpenBill()
         Number rowsUpdated = transitionBillsWithSessionClearance(true)
 
-        assertEquals 1, rowsUpdated
+        assert 1 == rowsUpdated
 
         def bills = Bill.findAll()
-        assertEquals true, bills.status.every { it == 'CLOSED' }
+        assert bills.status.every { it == 'CLOSED' }
     }
 
     void testUpdateAllOpenedBillsToStatusClosedWithoutClearingSession() {
         createAndSaveOpenBill()
         Number rowsUpdated = transitionBillsWithSessionClearance(false)
 
-        assertEquals 1, rowsUpdated
+        assert 1 == rowsUpdated
 
         def bills = Bill.findAll()
-        assertEquals true, bills.status.every { it == 'CLOSED' }
+        assert bills.status.every { it == 'CLOSED' }
     }
 
     private Number transitionBillsWithSessionClearance(Boolean sessionClearance) {
