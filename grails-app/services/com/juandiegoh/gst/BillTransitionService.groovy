@@ -1,7 +1,6 @@
 package com.juandiegoh.gst
 
 import grails.transaction.Transactional
-import org.springframework.transaction.annotation.Propagation
 
 @Transactional
 class BillTransitionService {
