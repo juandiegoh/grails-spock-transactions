@@ -1,0 +1,16 @@
+target/
+target-eclipse/
+.DS_Store
+.classpath
+.project
+.settings
+cobertura.ser
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
+out/
+.swp
+.metadata/
+.groovy/*
